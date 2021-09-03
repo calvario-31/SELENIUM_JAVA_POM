@@ -1,4 +1,4 @@
-# SELENIUM_JAVA_POM_2
+# SELENIUM_JAVA_POM
 
 to run on command line:
 mvn clean test -DsuiteName=${suite name} -Dbrowser=${browser name}

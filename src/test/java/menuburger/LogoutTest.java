@@ -35,13 +35,11 @@ public class LogoutTest extends Base {
         shoppingPage = new ShoppingPage(driver);
         Assert.assertTrue(shoppingPage.titleIsDisplayed());
 
-<<<<<<< HEAD
-=======
         topMenuPage = new TopMenuPage(driver);
         topMenuPage.logout();
 
->>>>>>> 1633d319fb22527259bee6684108b18f3937fbdd
-        Assert.assertTrue(mainPage.buttonImageIsDisplayed(), "Bot image is not displayed");
+        Assert.assertTrue(mainPage.buttonImageIsDisplayed(),
+                "Bot image is not displayed");
     }
 
     @AfterMethod(alwaysRun = true, description = "tearing down the driver")

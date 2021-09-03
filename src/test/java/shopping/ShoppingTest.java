@@ -24,10 +24,7 @@ import java.util.List;
 
 public class ShoppingTest extends Base {
     private MainPage mainPage;
-<<<<<<< HEAD
-=======
     private TopMenuPage topMenuPage;
->>>>>>> 1633d319fb22527259bee6684108b18f3937fbdd
     private ShoppingPage shoppingPage;
     private DetailItemPage detailItemPage;
     private DescriptionCheckoutPage descriptionCheckoutPage;
@@ -59,12 +56,15 @@ public class ShoppingTest extends Base {
         for (ShoppingItemModel item : shoppingItemModelList) {
             shoppingPage.goToDetail(item.getItemName());
             currentPrice = detailItemPage.addToCart(item.getItemId());
-            Assert.assertEquals(currentPrice, item.getPrice(), "Price were not equals");
+            Assert.assertEquals(currentPrice, item.getPrice(),
+                    "Price were not equals");
             sum += currentPrice;
         }
 
         topMenuPage = new TopMenuPage(driver);
-        Assert.assertEquals(topMenuPage.getItemCount(), shoppingItemModelList.size(), "Item count were not equal");
+        Assert.assertEquals(topMenuPage.getItemCount(), shoppingItemModelList.size(),
+                "Item count were not equal");
+
         topMenuPage.goToCheckout();
 
         descriptionCheckoutPage = new DescriptionCheckoutPage(driver);
@@ -75,16 +75,22 @@ public class ShoppingTest extends Base {
                 userDataModel.getZipcode());
 
         overviewCheckoutPage = new OverviewCheckoutPage(driver);
-        Assert.assertEquals(overviewCheckoutPage.getTotalPrice(), sum, "Sum were not equal");
+        Assert.assertEquals(overviewCheckoutPage.getTotalPrice(), sum,
+                "Sum were not equal");
+
         overviewCheckoutPage.finishCheckout();
 
         successShoppingPage = new SuccessShoppingPage(driver);
-        Assert.assertTrue(successShoppingPage.titleIsDisplayed(), "Success title was not displayed");
+        Assert.assertTrue(successShoppingPage.titleIsDisplayed(),
+                "Success title was not displayed");
         successShoppingPage.backToHome();
 
-        Assert.assertTrue(shoppingPage.titleIsDisplayed(), "Shopping title was not displayed");
+        Assert.assertTrue(shoppingPage.titleIsDisplayed(),
+                "Shopping title was not displayed");
+
         topMenuPage.logout();
-        Assert.assertTrue(mainPage.buttonImageIsDisplayed(), "Main page was not displayed");
+        Assert.assertTrue(mainPage.buttonImageIsDisplayed(),
+                "Main page was not displayed");
     }
 
     @AfterMethod(alwaysRun = true, description = "tearing down the driver")

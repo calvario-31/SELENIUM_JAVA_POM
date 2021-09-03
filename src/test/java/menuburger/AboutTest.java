@@ -8,21 +8,13 @@ import models.CredentialsModel;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pageobjects.account.MainPage;
-<<<<<<< HEAD
-import pageobjects.shopping.ShoppingPage;
-=======
 import pageobjects.topmenu.TopMenuPage;
->>>>>>> 1633d319fb22527259bee6684108b18f3937fbdd
 import utilities.Base;
 import utilities.DataReader;
 
 public class AboutTest extends Base {
     private MainPage mainPage;
-<<<<<<< HEAD
-    private ShoppingPage shoppingPage;
-=======
     private TopMenuPage topMenuPage;
->>>>>>> 1633d319fb22527259bee6684108b18f3937fbdd
 
     @BeforeMethod(alwaysRun = true, description = "setting up the driver")
     public void setUp() {
@@ -39,7 +31,8 @@ public class AboutTest extends Base {
         mainPage.login(credentialsModel.getUsername(), credentialsModel.getPassword());
 
         topMenuPage = new TopMenuPage(driver);
-        Assert.assertEquals(topMenuPage.getHrefFromAbout(), sauceLabsUrl, "Href does not equals to " + sauceLabsUrl);
+        Assert.assertEquals(topMenuPage.getHrefFromAbout(), sauceLabsUrl,
+                "Href does not equals to " + sauceLabsUrl);
     }
 
     @AfterMethod(alwaysRun = true, description = "tearing down the driver")

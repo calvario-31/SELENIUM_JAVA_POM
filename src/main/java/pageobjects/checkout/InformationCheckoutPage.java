@@ -12,10 +12,6 @@ public class InformationCheckoutPage extends Page {
     private final By inputZipcode = By.id("postal-code");
     private final By buttonContinue = By.id("continue");
     private final By title = By.className("title");
-<<<<<<< HEAD
-
-=======
->>>>>>> 1633d319fb22527259bee6684108b18f3937fbdd
 
     public InformationCheckoutPage(WebDriver driver) {
         super(driver, 5);

@@ -40,8 +40,4 @@ public abstract class Base {
 
     @AfterMethod(description = "Tearing down the driver")
     public abstract void tearDown();
-
-    public WebDriver getDriver() {
-        return driver;
-    }
 }
